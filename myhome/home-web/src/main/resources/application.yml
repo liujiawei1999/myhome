@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 19990903ljwljw.
+    url: jdbc:mysql://81.68.219.7:3306/home?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    tomcat:
+      init-s-q-l: SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci
+  redis:
+    host: 81.68.219.7
+    database: 0
+    port: 6379
+    password: 19990903ljwljw.
+  rabbitmq:
+    host: 81.68.219.7
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+    listener:
+      simple:
+        acknowledge-mode: manual
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+  task:
+    scheduling:
+      pool:
+        size: 5
+logging:
+  level:
+    com.jia: debug
+
+server:
+  port: 9098

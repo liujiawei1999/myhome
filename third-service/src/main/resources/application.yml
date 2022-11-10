@@ -1,0 +1,35 @@
+spring:
+  rabbitmq:
+    host: 81.68.219.7
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+
+    ##重试
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 6
+          max-interval: 20000ms
+          initial-interval: 3000ms
+          multiplier: 2
+        default-requeue-rejected: false
+  mail:
+    username: 2307497284@qq.com
+    password: dpvegnyjjmvqebfj
+    host: smtp.qq.com
+    default-encoding: utf-8
+    protocol: smtp
+    port: 587
+    properties:
+      mail:
+        stmp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+        debug: true
+
+
+server:
+  port: 7070
